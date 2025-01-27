@@ -23,3 +23,26 @@ body{
     color: var(--text-color-primary);
     background-color: var(--bg-color);
 }
+a {
+    text-decoration: none;  /* Remove o sublinhado */
+    color: inherit;         /* Faz com que a cor do texto seja herdada do seu elemento pai */
+  }
+
+  a:hover {
+    text-decoration: none;  /* Remove o sublinhado também no hover */
+    color: inherit;         /* Mantém a cor ao passar o mouse */
+  }
+  h1,h2,h3{
+    font:inherit;
+  }
+  .container{
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 33px;
+  }
+.grid{
+    display: grid;
+}
+.grid-flow-col{
+    grid-auto-flow: column;
+}
