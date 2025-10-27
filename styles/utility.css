@@ -1,36 +1,112 @@
-/* utility-first */
+/* 
+  Este arquivo simula o comportamento de um framework CSS como o Tailwind,
+  definindo classes utilitárias para espaçamento, layout, tipografia, etc.
+*/
+
+:root {
+  /* Breakpoints para design responsivo */
+  --sm: 640px;
+  --md: 768px;
+  --lg: 1024px;
+  --xl: 1280px;
+}
+
+/* ==========================================================================
+   Classes de Layout e Grid
+   ========================================================================== */
+
+.container {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 2rem; /* Adiciona um espaçamento lateral seguro */
+}
+
 .grid {
-    display: grid;
+  display: grid;
 }
 
 .grid-flow-col {
-    grid-auto-flow: column;
+  grid-auto-flow: column;
 }
 
-.grid-cols-2 {
-    grid-template-columns: 1fr 1fr;
+.flex {
+  display: flex;
 }
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   Classes de Espaçamento (Gap)
+   ========================================================================== */
 
 .gap-16 {
-    gap: 16px;
+  gap: 1rem; /* 16px */
 }
 
 .gap-32 {
-    gap: 32px;
+  gap: 2rem; /* 32px */
 }
 
-.text-2xl {
-    font: var(--h1);
-}
+/* ==========================================================================
+   Classes de Tipografia (Font Size)
+   ========================================================================== */
 
-.text-xl {
-    font: var(--h2);
+.text-sm {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.25rem;
 }
 
 .text-lg {
-    font: var(--h3);
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.75rem;
 }
 
-.text-sm {
-    font: var(--text-sm);
+.text-xl {
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.75rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem; /* 24px */
+  line-height: 2rem;
+}
+
+/* ==========================================================================
+   Classes Responsivas (Media Queries)
+   ========================================================================== */
+
+/* Small screens (sm) e acima */
+@media (min-width: var(--sm)) {
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Medium screens (md) e acima */
+@media (min-width: var(--md)) {
+  .md\:grid-flow-col {
+    grid-auto-flow: column;
+  }
+}
+
+/* Large screens (lg) e acima */
+@media (min-width: var(--lg)) {
+  .lg\:grid-flow-col {
+    grid-auto-flow: column;
+  }
+  .lg\:gap-16 {
+    gap: 1rem;
+  }
+}
+
+/* Extra-large screens (xl) e acima */
+@media (min-width: var(--xl)) {
+  .xl\:grid-cols-\[2fr_1fr\] {
+    grid-template-columns: 2fr 1fr;
+  }
+  .xl\:gap-32 {
+    gap: 2rem;
+  }
 }
